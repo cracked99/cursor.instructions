@@ -1,0 +1,157 @@
+<Agentic-Framework-Configuration>
+  <Core-Architecture>
+    <Initialization>
+      <apply>on_init</apply>
+      <set-core-behavior-model>
+        <location>.cursor/rules/core-agent-behaviour.mdc</location>
+        <description>Establishes fundamental interaction patterns, response protocols, and learning mechanisms that define the agent's core functionality</description>
+      </set-core-behavior-model>
+    </Initialization>
+    
+    <Cognitive-Centers>
+      <Information-Processing-Center>
+        <apply>on_init</apply>
+        <set-information-processing-model>
+          <location>.cursor/rules/enhanced-rules-index.mdc</location>
+          <description>Governs information intake, classification, prioritization, and contextual understanding</description>
+        </set-information-processing-model>
+      </Information-Processing-Center>
+      
+      <Decision-Making-Center>
+        <apply>on_state_change:decision-making</apply>
+        <set-decision-making-model>
+          <location>.cursor/rules/enhanced-rules-index.mdc</location>
+          <description>Controls evaluation of alternatives, risk assessment, and selection of optimal solutions</description>
+        </set-decision-making-model>
+      </Decision-Making-Center>
+      
+      <Code-Quality-Center>
+        <apply>on_state_change:coding</apply>
+        <set-code-quality-model>
+          <location>.cursor/rules/code-quality-development.mdc</location>
+          <description>Enforces code standards, best practices, performance optimization, and security protocols</description>
+        </set-code-quality-model>
+      </Code-Quality-Center>
+      
+      <Architectural-Guidelines-Center>
+        <apply>on_state_change:implementation_design</apply>
+        <set-architectural-guidelines-model>
+          <location>.cursor/rules/architectural-guidelines.mdc</location>
+          <description>Ensures adherence to system architecture principles, design patterns, and scalability considerations</description>
+        </set-architectural-guidelines-model>
+      </Architectural-Guidelines-Center>
+      
+      <Special-Operations-Center>
+        <apply>on_explicit_trigger</apply>
+        <set-special-operations-model>
+          <location>.cursor/rules/special-operations.mdc</location>
+          <description>Handles complex operations requiring specialized knowledge or procedural sequences</description>
+        </set-special-operations-model>
+      </Special-Operations-Center>
+    </Cognitive-Centers>
+    
+    <Operational-Strategy>
+      <Startup-Sequence>
+        <load>concise-rules/index.mdc,rules-index.mdc</load>
+        <description>Initializes with essential navigation and mental mapping tools to provide baseline operational capability</description>
+      </Startup-Sequence>
+      
+      <Execution-Pipeline>
+        <step>
+          <name>analyze_task:domain_categorization</name>
+          <description>Systematically analyzes user requirements to categorize the task domain (behavior/code/architecture/special), identifying primary cognitive centers to activate</description>
+        </step>
+        <step>
+          <name>apply_concise_rules</name>
+          <description>Applies highest-priority concise rules first to establish baseline approach and identify critical constraints</description>
+        </step>
+        <step>
+          <name>evaluate_depth_needed:complexity,familiarity,ambiguity,risk</name>
+          <description>Evaluates task requirements across four dimensions: complexity (implementation difficulty), familiarity (pattern recognition), ambiguity (requirement clarity), and risk (potential for error)</description>
+        </step>
+        <step>
+          <name>conditional_load:specific_rules</name>
+          <description>Dynamically loads additional specialized rule sets based on evaluation results, prioritizing most relevant sections</description>
+        </step>
+        <step>
+          <name>special_ops:follow_workflow</name>
+          <description>For complex operations, follows comprehensive predefined workflows with verification checkpoints</description>
+        </step>
+      </Execution-Pipeline>
+      
+      <Optimization-Techniques>
+        <technique>
+          <name>lazy_loading</name>
+          <description>Loads rule sets only when needed to minimize cognitive overhead and optimize response time</description>
+        </technique>
+        <technique>
+          <name>rule_tracking</name>
+          <description>Maintains registry of applied rules to prevent redundant processing and ensure consistent application</description>
+        </technique>
+        <technique>
+          <name>priority_processing</name>
+          <description>Processes high-impact rules first when resource constraints exist, ensuring critical guidelines are never omitted</description>
+        </technique>
+        <technique>
+          <name>effectiveness_learning</name>
+          <description>Records rule application outcomes to optimize future rule selection and adaptation</description>
+        </technique>
+        <technique>
+          <name>timestamp_checking</name>
+          <description>Monitors rule file modification timestamps to ensure latest versions are applied</description>
+        </technique>
+      </Optimization-Techniques>
+    </Operational-Strategy>
+  </Core-Architecture>
+  
+  <Meta-Control>
+    <Performance-Monitoring>
+      <metric>
+        <name>latency</name>
+        <description>Measures response time across different operation types to identify optimization opportunities</description>
+      </metric>
+      <metric>
+        <name>instruction_adherence</name>
+        <description>Evaluates alignment between user instructions and agent responses, tracking deviation patterns</description>
+      </metric>
+      <metric>
+        <name>context_utilization</name>
+        <description>Measures effective use of available context information in generating responses</description>
+      </metric>
+      <metric>
+        <name>output_quality</name>
+        <description>Assesses response completeness, accuracy, and alignment with user requirements</description>
+      </metric>
+    </Performance-Monitoring>
+    
+    <Adaptive-Learning>
+      <mechanism>
+        <name>response_pattern_tracking</name>
+        <description>Records successful response patterns to enable pattern matching for similar future scenarios</description>
+      </mechanism>
+      <mechanism>
+        <name>correction_pattern_identification</name>
+        <description>Analyzes user corrections to identify systematic adjustment patterns</description>
+      </mechanism>
+      <mechanism>
+        <name>rule_prioritization_adjustment</name>
+        <description>Dynamically adjusts rule priorities based on efficacy metrics and user feedback</description>
+      </mechanism>
+    </Adaptive-Learning>
+    
+    <Error-Recovery>
+      <strategy>
+        <name>failure_detection_fallback</name>
+        <description>Detects processing failures and gracefully falls back to simpler, more reliable response strategies</description>
+      </strategy>
+      <strategy>
+        <name>state_awareness_maintenance</name>
+        <description>Maintains awareness of current operational state to enable recovery from interruptions</description>
+      </strategy>
+      <strategy>
+        <name>graceful_degradation</name>
+        <description>Progressively reduces feature complexity when facing resource constraints rather than failing completely</description>
+      </strategy>
+    </Error-Recovery>
+  </Meta-Control>
+</Agentic-Framework-Configuration>
